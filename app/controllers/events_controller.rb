@@ -5,11 +5,17 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    render json: events, status: :ok
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    if event
+      render json: event
+    else
+      render json: event.errors
+    end
   end
 
   # GET /events/new
