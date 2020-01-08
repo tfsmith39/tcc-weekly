@@ -22,7 +22,7 @@
         <td><%= event.desc %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= button_to 'Destroy', event,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Destroy", [:delete, event] %></td>
       </tr>
     <% end %>
   </tbody>

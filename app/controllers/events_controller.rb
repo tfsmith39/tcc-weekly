@@ -39,6 +39,10 @@ class EventsController < ApplicationController
   def edit
   end
 
+  def delete
+    @event = Event.find(params[:id])
+  end
+
   # POST /events
   # POST /events.json
   def create

@@ -57,6 +57,8 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'bootstrap'
 
-gem 'jquery-rails'
+group :assets do
+  gem 'jquery-rails'
+end
 
 gem 'webpacker'
