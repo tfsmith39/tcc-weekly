@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get 'json' => "events#json"
 
   get 'json_weekly' => "events#json_weekly"
+
 end

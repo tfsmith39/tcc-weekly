@@ -56,3 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "simple_calendar", "~> 2.0"
 
 gem 'bootstrap'
+
+gem 'jquery-rails'
+
+gem 'webpacker'
