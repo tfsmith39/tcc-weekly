@@ -47,24 +47,28 @@
 
 <h3>This Week's Events</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Date</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @weekly_events.each do |event| %>
+<% if @weekly_events.blank? %>
+  <h6>Nothing<h6>
+<% else %>
+  <table>
+    <thead>
       <tr>
-        <td><%= event.name %></td>
-        <td><%= event.location %></td>
-        <td><%= event.date.strftime("%A, %B %d %I:%M %p")%></td>
-        <td><%= event.desc %></td>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Description</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @weekly_events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.location %></td>
+          <td><%= event.date.strftime("%A, %B %d %I:%M %p")%></td>
+          <td><%= event.desc %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
