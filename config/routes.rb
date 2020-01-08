@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   root 'events#index'
 
   get 'json' => "events#json"
+
+  get 'json_weekly' => "events#json_weekly"
 end

@@ -18,7 +18,7 @@
       <tr>
         <td><%= event.name %></td>
         <td><%= event.location %></td>
-        <td><%= event.date.strftime('%A')%><%=','%> <%=event.date.to_formatted_s(:long_ordinal) %></td>
+        <td><%= event.date.strftime("%A, %B %d %I:%M %p")%></td>
         <td><%= event.desc %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
@@ -30,19 +30,41 @@
 
 <br>
 
+<h1>Calendar</h1>
 <%= link_to 'New Event', new_event_path %>
-
-<br>
-<br>
-
-<h2>Calendar</h2>
 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
   <% events.each do |event| %>
     <div>
-      <%= link_to event.name, event, class: 'a-custom' %>
+      <%= link_to event.name, event, class: 'a-custom', title: event.desc %>
     </div>
   <% end %>
 <% end %>
+
+<br>
+
+<h3>This Week's Events</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weekly_events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.date.strftime("%A, %B %d %I:%M %p")%></td>
+        <td><%= event.desc %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

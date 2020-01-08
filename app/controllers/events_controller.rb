@@ -4,13 +4,24 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.order('date')
+
+    today = Date.today # Today's date
+    @days_from_this_week = today.at_beginning_of_week..today.at_end_of_week
+    @weekly_events = Event.where(date: @days_from_this_week).order('date')
   end
 
   # GET /events/json.json
   def json
-    @events = Event.all
+    @events = Event.all.order('date')
     render json: @events, status: :ok
+  end
+
+  def json_weekly
+    today = Date.today # Today's date
+    @days_from_this_week = today.at_beginning_of_week..today.at_end_of_week
+    @weekly_events = Event.where(date: @days_from_this_week).order('date')
+    render json: @weekly_events, status: :ok
   end
 
   # GET /events/1
