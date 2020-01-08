@@ -7,16 +7,10 @@ default: &default
   public_output_path: packs
   cache_path: tmp/cache/webpacker
   check_yarn_integrity: false
-  webpack_compile_output: true
+  webpack_compile_output: false
 
-  # Additional paths webpack should lookup modules
-  # ['app/assets', 'engine/foo/app/assets']
   resolved_paths: []
-
-  # Reload manifest.json on all requests so we reload latest compiled packs
   cache_manifest: false
-
-  # Extract and emit a css file
   extract_css: false
 
   static_assets_extensions:
@@ -52,17 +46,14 @@ development:
   <<: *default
   compile: true
 
-  # Verifies that correct packages and versions are installed by inspecting package.json, yarn.lock, and node_modules
   check_yarn_integrity: true
 
-  # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:
     https: false
     host: localhost
     port: 3035
     public: localhost:3035
     hmr: false
-    # Inline should be set to true if using HMR
     inline: true
     overlay: true
     compress: true
@@ -92,5 +83,5 @@ production:
   # Extract and emit a css file
   extract_css: true
 
-  # Cache manifest.json for performance
+  # Cache manifest.json for perfo`enter code here`rmance
   cache_manifest: true
