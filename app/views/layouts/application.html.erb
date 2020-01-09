@@ -7,9 +7,23 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    body {
+        position: relative;
+    }
+    </style>
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <% unless controller_name == "welcome" %>
+    <%= render 'layouts/navbar' %>
+  <% end %>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
+
+
     <%= yield %>
   </body>
 </html>

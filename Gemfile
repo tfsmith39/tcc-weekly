@@ -62,3 +62,9 @@ group :assets do
 end
 
 gem 'webpacker'
+
+gem 'omniauth-google-oauth2'
+
+gem 'devise'
+
+gem 'jquery-rails'

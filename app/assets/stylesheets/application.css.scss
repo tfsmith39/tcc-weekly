@@ -16,6 +16,18 @@
  */
  @import "bootstrap";
 
+.navbar-custom {
+  background-color: #f26d6d;
+  // navbar-expand-lg navbar-dark bg-dark
+}
+
+.navbar {
+  a:hover {
+    background-color: #007bff !important;
+    color: white !important;
+  }
+}
+
 a:hover, a:active {
   background-color: #007bff;
   color: white !important;
@@ -64,3 +76,6 @@ a:link, a:visited {
     font-weight: bold;
   }
 }
+
+.error, .alert {background:#ff6b6b;padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+.success, .confirmations, .already_authenticated, .notice, .info {background:#e6efc2;color:#264409;border-color:#c6d880;padding:0.8em;margin-bottom:1em;}
