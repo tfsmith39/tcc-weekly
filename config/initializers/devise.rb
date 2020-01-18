@@ -32,6 +32,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  config.omniauth :google_oauth2, '331576768546-hguhtv4538frg2pcoli46m8gvos4817n.apps.googleusercontent.com', 'lIUtesEJLKfVOYBlw0Bx8sLZ', {scope: "userinfo.email, userinfo.profile", skip_jwt: true}
+  config.omniauth :google_oauth2, '331576768546-hguhtv4538frg2pcoli46m8gvos4817n.apps.googleusercontent.com', 'lIUtesEJLKfVOYBlw0Bx8sLZ', {scope: "userinfo.email, userinfo.profile,https://www.google.com/m8/feeds", skip_jwt: true, access_type: 'offline', approval_prompt: '', client_options: {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}} }
 
 end
+# skip_jwt: true
