@@ -1,0 +1,4 @@
+default: &default
+  oauth2:
+    GOOGLE_CLIENT_ID: 331576768546-hguhtv4538frg2pcoli46m8gvos4817n.apps.googleusercontent.com
+    GOOGLE_CLIENT_SECRET: lIUtesEJLKfVOYBlw0Bx8sLZ
